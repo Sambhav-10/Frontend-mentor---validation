@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+
+            <div id="material">
+                <div class="main" id="mainpage">
+                    <h1> Stay updated!</h1>
+                    <div class="text">
+                        <p>Join 60,000+ product managers receving monthly update on:</p>
+                        <i><span>&#10003;</span> Product discovery and building what matters</i><br>
+                        <i><span>&#10003;</span> Measuring to wnsure update are a success</i><br>
+                        <i><span>&#10003;</span> And much more!</i>
+                    </div>
+                    <div class="input">
+                        <label for="email">Email address</label><br>
+                        <div class="error"></div>
+                        <input type="email" name="" id="email" placeholder="email@company.com"><br>
+                        <button id="subscribeButton">Subscribe to monthly newsletter</button>
+                        <div class="measage"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="img">
+                <div class="box">
+                    <div class="web">
+                        <div class="h">
+                            <div class="h-item">
+                                <div class="red"></div>
+                                <div class="white"></div>
+                                <div class="blue"></div>
+                            </div>
+                        </div>
+                        <div class="web-nav">
+                            <div class="line0 line"></div>
+                            <div class="line1 line"></div>
+                            <div class="line2 line"></div>
+                            <div class="line3 line"></div>
+                        </div>
+
+                        <div class="growth-box">
+                            <img src="growth.png" alt="">
+                        </div>
+
+                        <div class="round">
+                            <h1>94</h1>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <div class="orange"></div>
+                        <div class="orange-half"></div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+
+
+    document.getElementById("subscribeButton").addEventListener("click", subscribe);
+
+    function subscribe() {
+        var emailInput = document.getElementById("email");
+        var errorMessage = document.querySelector(".error");
+        var message = document.querySelector(".message");
+
+        // Regular expression for email validation
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailInput.value.match(emailRegex)) {
+            errorMessage.innerText = "Invalid email address";
+            errorMessage.style.color = "red";
+        } else {
+            errorMessage.innerText = "Subscribed successfully!";
+            errorMessage.style.color = "green";
+            // Process subscription here
+            // message.innerText = "Subscribed successfully!";
+            message.style.color = "green";
+        }
+    }
+
+
+
+</script>
+
+</html>
